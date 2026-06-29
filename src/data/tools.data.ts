@@ -1,6 +1,6 @@
 import type { Tool, CategoryOption } from '../types/tool.types'
 
-//logo
+// Logos
 import domodomo from '../assets/logos/domodomo.png'
 import docs from '../assets/logos/docs.png'
 import slides from '../assets/logos/slides.png'
@@ -160,6 +160,45 @@ export const TOOLS: Tool[] = [
     link: 'https://gibbonedu.org',
     logo: '', 
   },
+  {
+    id: 39,
+    name: 'OpenEduCat',
+    category: 'Classroom & Learning Management',
+    categoryId: 'classroom',
+    offlineCapable: 'No',
+    techSkill: 'Medium',
+    deviceSupport: ['Web'],
+    description:
+      'An open-source educational ERP and SIS. It is highly adaptable to the Philippine educational context, helping institutions manage large class sizes, student records, and blended learning setups.',
+    link: 'https://openeducat.org',
+    logo: '', 
+  },
+  {
+    id: 40,
+    name: 'Veyon',
+    category: 'Classroom & Learning Management',
+    categoryId: 'classroom',
+    offlineCapable: 'Yes',
+    techSkill: 'Medium',
+    deviceSupport: ['Mac', 'Windows'],
+    description:
+      'Open-source computer lab management software. Allows instructors to monitor, control, and guide students across a local network during offline computer literacy classes.',
+    link: 'https://veyon.io',
+    logo: '', 
+  },
+  {
+    id: 41,
+    name: 'Jitsi Meet',
+    category: 'Classroom & Learning Management',
+    categoryId: 'classroom',
+    offlineCapable: 'No',
+    techSkill: 'Low',
+    deviceSupport: ['Web', 'Android', 'iOS', 'Mac', 'Windows'],
+    description:
+      'A fully open-source, secure video conferencing alternative to Zoom or Google Meet. Can be self-hosted by schools to save bandwidth and provides unrestricted meeting times for virtual classes.',
+    link: 'https://meet.jit.si',
+    logo: '', 
+  },
 
   // ── Content Creation & Interactive Lessons ────────────────────────────────
   {
@@ -305,6 +344,32 @@ export const TOOLS: Tool[] = [
     link: 'https://excalidraw.com',
     logo: '', 
   },
+  {
+    id: 42,
+    name: 'Anki',
+    category: 'Content Creation & Interactive Lessons',
+    categoryId: 'content',
+    offlineCapable: 'Yes',
+    techSkill: 'Low',
+    deviceSupport: ['Android', 'iOS', 'Mac', 'Windows'],
+    description:
+      'Open-source flashcard app utilizing spaced repetition. Highly effective for building community-driven decks to preserve local dialects, memorize historical dates, or master complex technical terminology.',
+    link: 'https://apps.ankiweb.net/',
+    logo: '', 
+  },
+  {
+    id: 43,
+    name: 'Audacity',
+    category: 'Content Creation & Interactive Lessons',
+    categoryId: 'content',
+    offlineCapable: 'Yes',
+    techSkill: 'Medium',
+    deviceSupport: ['Mac', 'Windows'],
+    description:
+      'Free, open-source audio editor. Essential for recording offline language lessons, educational podcasting, or documenting oral histories and local folklore.',
+    link: 'https://www.audacityteam.org/',
+    logo: '', 
+  },
 
   // ── Subject-Specific STEM Tools ───────────────────────────────────────────
   {
@@ -424,6 +489,32 @@ export const TOOLS: Tool[] = [
     link: 'https://sourceforge.net/projects/tuxmath/',
     logo: '', 
   },
+  {
+    id: 44,
+    name: 'mBlock',
+    category: 'Subject-Specific STEM Tools',
+    categoryId: 'stem',
+    offlineCapable: 'Yes',
+    techSkill: 'Medium',
+    deviceSupport: ['Web', 'Mac', 'Windows'],
+    description:
+      'A powerful coding platform designed for robotics education. It allows students to transition smoothly from block-based programming to text-based syntax, perfect for programming autonomous hardware and troubleshooting direct device uploads.',
+    link: 'https://mblock.makeblock.com/en-us/',
+    logo: '', 
+  },
+  {
+    id: 45,
+    name: 'Minetest',
+    category: 'Subject-Specific STEM Tools',
+    categoryId: 'stem',
+    offlineCapable: 'Yes',
+    techSkill: 'Low',
+    deviceSupport: ['Android', 'Mac', 'Windows'],
+    description:
+      'An open-source voxel game engine. Serves as a free alternative to Minecraft: Education Edition, allowing students to learn spatial logic or digitally reconstruct local historical sites.',
+    link: 'https://www.minetest.net/',
+    logo: '', 
+  },
 
   // ── Regional & Localized Resources ────────────────────────────────────────
   {
@@ -452,6 +543,45 @@ export const TOOLS: Tool[] = [
     link: 'https://weblate.org',
     logo: '', 
   },
+  {
+    id: 46,
+    name: 'DepEd LR Portal',
+    category: 'Regional & Localized Resources',
+    categoryId: 'regional',
+    offlineCapable: 'No',
+    techSkill: 'Low',
+    deviceSupport: ['Web'],
+    description:
+      'The official Learning Resource Portal of the Philippines. Provides educators with a massive database of free Daily Lesson Logs (DLLs), detailed lesson plans, and Self-Learning Modules (SLMs).',
+    link: 'https://lrmds.deped.gov.ph/',
+    logo: '', 
+  },
+  {
+    id: 47,
+    name: 'TeacherPH',
+    category: 'Regional & Localized Resources',
+    categoryId: 'regional',
+    offlineCapable: 'No',
+    techSkill: 'Low',
+    deviceSupport: ['Web'],
+    description:
+      'A professional learning online community for Filipino educators. Provides a hub for sharing localized teaching resources, educational news, and professional development materials.',
+    link: 'https://www.teacherph.com/',
+    logo: '', 
+  },
+  {
+    id: 48,
+    name: 'OpenStreetMap (OSM)',
+    category: 'Regional & Localized Resources',
+    categoryId: 'regional',
+    offlineCapable: 'Yes',
+    techSkill: 'Medium',
+    deviceSupport: ['Web', 'Android', 'iOS'],
+    description:
+      'A collaborative, open-source geographic database. Educators can engage students in community projects, such as mapping local informal transit routes, plotting regional commerce, or documenting neighborhood changes.',
+    link: 'https://www.openstreetmap.org/',
+    logo: '', 
+  },
 
   // ── Essential Libraries and Offline Archives ──────────────────────────────
   {
@@ -464,7 +594,7 @@ export const TOOLS: Tool[] = [
     deviceSupport: ['Android', 'iOS', 'Mac', 'Windows'],
     description:
       'DomoDomo is an open-source productivity workshop running entirely in your browser sandbox. Edit files, compress media, compile PDF modifications, and run local AI models. Your files never touch the cloud.',
-    link: 'https://domodomo.site/?fbclid=IwY2xjawSpjk5leHRuA2FlbQIxMABicmlkETIybmx1aFRYaGtJVDhxenhUc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjW8Qzq3nfk5wE4JCusQIMb2mU8Qr2CG9myK2rEF9DtWkL9YExD91cRREU6z_aem_1lN4Y6R4xL6oVfMWt3e4uA#/',
+    link: 'https://domodomo.site/',
     logo: domodomo, 
   },
   {
@@ -517,6 +647,58 @@ export const TOOLS: Tool[] = [
     description:
       'A library of over 70,000 free, public-domain eBooks. Teachers can download complete catalogs of classical literature and historical documents for offline reading repositories.',
     link: 'https://www.gutenberg.org',
+    logo: '', 
+  },
+  {
+    id: 49,
+    name: 'Khan Academy Philippines',
+    category: 'Essential Libraries and Offline Archives',
+    categoryId: 'libraries',
+    offlineCapable: 'No',
+    techSkill: 'Low',
+    deviceSupport: ['Web', 'Android', 'iOS'],
+    description:
+      'A localized platform offering free, interactive courses specifically aligned with the Department of Education\'s Matatag curriculum to build foundational skills.',
+    link: 'https://khanacademyphilippines.org/',
+    logo: '', 
+  },
+  {
+    id: 50,
+    name: 'RACHEL',
+    category: 'Essential Libraries and Offline Archives',
+    categoryId: 'libraries',
+    offlineCapable: 'Yes',
+    techSkill: 'Advanced',
+    deviceSupport: ['Web', 'Android', 'iOS', 'Mac', 'Windows'],
+    description:
+      'Remote Area Community Hotspot for Education and Learning. A combination of software and hardware server images that delivers vast digital educational libraries to places with zero internet access.',
+    link: 'https://worldpossible.org/rachel',
+    logo: '', 
+  },
+  {
+    id: 51,
+    name: 'Calibre',
+    category: 'Essential Libraries and Offline Archives',
+    categoryId: 'libraries',
+    offlineCapable: 'Yes',
+    techSkill: 'Low',
+    deviceSupport: ['Mac', 'Windows'],
+    description:
+      'A powerful, open-source e-book manager. Essential for offline schools to organize, convert, and easily distribute digital reading materials directly to student devices.',
+    link: 'https://calibre-ebook.com/',
+    logo: '', 
+  },
+  {
+    id: 52,
+    name: 'Freeplane',
+    category: 'Content Creation & Interactive Lessons',
+    categoryId: 'content',
+    offlineCapable: 'Yes',
+    techSkill: 'Low',
+    deviceSupport: ['Mac', 'Windows'],
+    description:
+      'An open-source mind-mapping and knowledge management tool. Helps teachers visually organize lesson plans or brainstorm complex topics completely offline.',
+    link: 'https://www.freeplane.org/',
     logo: '', 
   },
 ]
