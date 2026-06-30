@@ -4,7 +4,7 @@ import LandingPage from './components/LandingPage'
 import About from './components/About'
 // import Tools from './components/Tools'
 import DepEdOERs from './components/DepEdOERsPage'
-// import AiTools from './components/AiTools'
+import AiTools from './components/AiTools'
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/deped-oers" element={<DepEdOERs />} /> 
+          <Route path="/ai-tools" element={<AiTools />} /> 
           {/*
           <Route path="/tools" element={<Tools />} /> 
-          <Route path="/ai-tools" element={<AiTools />} /> 
           */}
       </Routes>
     </Router>
