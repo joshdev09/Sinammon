@@ -2,10 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import { ToolsProvider, useTools } from '../context/ToolsContext'
 import type { Tool } from '../types/tool.types'
 
-// Import your new Navbar component
-import Navbar from './NavBar'
-
-//images (logo removed as it now lives in Navbar.tsx)
+//images
 import iconBackpack from '../assets/images/d1.png'
 import halftone from '../assets/images/d5.png'
 import iconPlane from '../assets/images/d2.png'
@@ -86,7 +83,7 @@ function Hero() {
         className="absolute top-0 right-0 w-full sm:w-[60%] lg:w-[48%] h-full object-cover object-right-top opacity-[0.12] sm:opacity-[0.18] lg:opacity-[0.20] pointer-events-none select-none"
       />
 
-      {/* Headline — always visible */}
+      {/* Headline */}
       <div className="relative z-10 flex-1 min-w-0">
         <h1 className="text-[28px] sm:text-[40px] lg:text-[56px] font-bold text-[#333333] leading-[1.1] mb-3 sm:mb-4 tracking-tight max-w-[500px]">
           Open-Source Tools Platform for Educators.
@@ -99,7 +96,7 @@ function Hero() {
         </p>
       </div>
 
-      {/* Crayon icons — hidden on mobile, scaled on tablet */}
+      {/* Crayon icons */}
       <div className="relative z-10 w-[240px] h-[150px] sm:w-[300px] sm:h-[180px] lg:w-[380px] lg:h-[200px] flex-shrink-0 hidden sm:block">
         <img src={iconStar}    alt="" aria-hidden
           className="absolute -top-[20px] sm:-top-[25px] lg:-top-[30px] -left-[180px] sm:-left-[240px] lg:-left-[300px] w-[170px] sm:w-[210px] lg:w-[270px] rotate-[-8deg] drop-shadow-sm" />
@@ -125,7 +122,6 @@ function FilterBar() {
 
   return (
     <div className="px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 bg-white border-b border-[#eee]">
-      {/* Mobile: search on top, pills below */}
       <div className="flex flex-col sm:hidden gap-2">
         <div className="flex items-center gap-2 bg-[#efefef] rounded-xl px-3 py-2">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -148,7 +144,6 @@ function FilterBar() {
           )}
         </div>
 
-        {/* Mobile pill scroll — no arrow buttons */}
         <div className="flex gap-1.5 overflow-x-auto pb-0.5" style={{ scrollbarWidth: 'none' }}>
           {categories.map(({ id, label }) => (
             <button
@@ -478,7 +473,6 @@ function ToolsWindow() {
 function LandingPageInner() {
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <Navbar />
         <Hero />
       <FilterBar />
 

@@ -1,8 +1,3 @@
-import React from 'react';
-import Navbar from './NavBar';
-
-// --- Small hand-drawn doodle icons, matching the sketchy style used on the Tools page ---
-
 function DoodleBulb({ className = "" }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" className={className}>
@@ -138,7 +133,6 @@ function About() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#333333]">
-      <Navbar />
 
       {/* HERO */}
       <header className="relative overflow-hidden border-b border-gray-100">

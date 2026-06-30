@@ -37,7 +37,7 @@ const ToolsContext = createContext<ToolsContextValue | null>(null)
 export function ToolsProvider({ children }: { children: ReactNode }) {
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all')
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedTool, setSelectedTool] = useState<Tool | null>(TOOLS[0])
+  const [selectedTool, setSelectedTool] = useState<Tool | null>(null)
 
   const filteredTools = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
