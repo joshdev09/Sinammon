@@ -432,7 +432,7 @@ export default function DepEdOERsPage() {
           <h1 className="text-[24px] sm:text-[28px] font-bold text-[#1a1a1a] leading-tight mb-2">
             Official Learning Resources
           </h1>
-          <p className="text-[13px] text-[#666] leading-relaxed max-w-[560px] mb-2">
+          <p className="text-[13px] text-[#666] leading-relaxed max-w-[700px] mb-2">
             Quick access to the Department of Education's Learning Resource Portal.
             Every link below opens the resource directly on the official DepEd site
             we don't host, mirror, or redistribute any files here.
