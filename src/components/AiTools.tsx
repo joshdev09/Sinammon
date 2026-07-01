@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import type { AiTool, AiCategoryId } from '../types/aiTool.types'
 import { CATEGORIES, TOOLS } from '../data/aiTools.data'
+import { NavLink } from 'react-router-dom'
 
 type NonAllCategoryId = Exclude<AiCategoryId, 'all'>
 
@@ -246,6 +247,15 @@ function AiTools() {
 
   return (
     <div style={{ background: '#F0F1F3' }} className="min-h-screen w-full p-4 sm:p-6">
+      <div className="m-2 pb-2">
+        <button className="md:hidden">
+          <NavLink to="/">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+            </svg>
+          </NavLink>
+        </button>
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Top nav: search sits above the category pills on mobile, and to
             the right of them on desktop. */}
@@ -285,8 +295,7 @@ function AiTools() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
-          {/* Desktop sidebar only — hidden on mobile, where details show as
-              a bottom sheet instead. */}
+          {/* Desktop sidebar only*/}
           <div
             style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}
             className="hidden md:block rounded-2xl w-72 shrink-0 p-5 h-fit md:sticky md:top-4"
