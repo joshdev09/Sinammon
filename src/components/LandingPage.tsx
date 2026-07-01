@@ -122,9 +122,9 @@ function FilterBar() {
 
   return (
     <div className="px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 bg-white border-b border-[#eee]">
-      <div className="flex flex-col sm:hidden gap-2">
-        <div className="flex items-center gap-2 bg-[#efefef] rounded-xl px-3 py-2">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <div className="flex flex-col sm:hidden gap-2.5">
+        <div className="flex items-center gap-2.5 bg-[#efefef] rounded-full px-4 py-2.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
             <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
           <input
@@ -132,25 +132,25 @@ function FilterBar() {
             placeholder="Search Tools..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="bg-transparent border-none outline-none text-[13px] text-[#333] placeholder-[#bbb] w-full"
+            className="bg-transparent border-none outline-none text-[14px] text-[#333] placeholder-[#bbb] w-full"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           />
           {searchQuery && (
             <button onClick={() => setSearchQuery('')} className="text-[#bbb] hover:text-[#888] transition-colors flex-shrink-0">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
           )}
         </div>
 
-        <div className="flex gap-1.5 overflow-x-auto pb-0.5" style={{ scrollbarWidth: 'none' }}>
+        <div className="flex gap-2 overflow-x-auto pb-0.5" style={{ scrollbarWidth: 'none' }}>
           {categories.map(({ id, label }) => (
             <button
               key={id}
               onClick={() => setActiveCategory(id)}
               className={`
-                flex-shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold
+                flex-shrink-0 px-4 py-2 rounded-full text-[13px] font-semibold
                 transition-colors whitespace-nowrap cursor-pointer
                 ${id === activeCategory ? 'bg-[#333333] text-white' : 'bg-[#efefef] text-[#555]'}
               `}
@@ -481,7 +481,6 @@ function LandingPageInner() {
         <ToolsWindow />
       </div>
 
-      {/* Mobile bottom drawer — renders on top when a tool is selected */}
       <MobileToolDrawer />
     </div>
   )

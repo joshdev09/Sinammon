@@ -7,6 +7,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import DepEdOERs from './components/DepEdOERsPage'
 import AiTools from './components/AiTools'
+import FeedbackPage from './pages/FeedbackPage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/deped-oers" element={<DepEdOERs />} />
             <Route path="/ai-tools" element={<AiTools />} />
+            <Route path="/feedback" element={<FeedbackPage />} />
           </Routes>
 
           <hr className="border-t border-[#e5e5e5]" />
