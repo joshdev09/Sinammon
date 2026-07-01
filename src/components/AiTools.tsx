@@ -50,11 +50,13 @@ function getLogoSrc(tool: AiTool): string {
   return domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128` : ''
 }
 
-function ToolLogo({ tool, size = 56 }: { tool: AiTool; size?: number }) {
+function ToolLogo({ tool, size = 56, animated = false }: { tool: AiTool; size?: number; animated?: boolean }) {
   const [errored, setErrored] = useState(false)
   const meta = CATEGORY_META[tool.categoryId as NonAllCategoryId]
   const Icon = meta.icon
   const src = getLogoSrc(tool)
+
+  const hoverClass = animated ? 'group-hover:scale-110 transition-transform duration-300' : ''
 
   if (!src || errored) {
     return (
@@ -62,7 +64,7 @@ function ToolLogo({ tool, size = 56 }: { tool: AiTool; size?: number }) {
         style={{ background: meta.soft, width: size, height: size }}
         className="rounded-full flex items-center justify-center shrink-0"
       >
-        <Icon size={Math.round(size * 0.45)} color={meta.color} />
+        <Icon size={Math.round(size * 0.45)} color={meta.color} className={hoverClass} />
       </div>
     )
   }
@@ -77,6 +79,7 @@ function ToolLogo({ tool, size = 56 }: { tool: AiTool; size?: number }) {
         alt={`${tool.name} logo`}
         onError={() => setErrored(true)}
         style={{ width: Math.round(size * 0.6), height: Math.round(size * 0.6), objectFit: 'contain' }}
+        className={hoverClass}
       />
     </div>
   )
@@ -98,13 +101,17 @@ function ToolCard({
       role="button"
       tabIndex={0}
       onKeyDown={(e: KeyboardEvent) => e.key === 'Enter' && onSelect()}
-      style={{
-        background: '#FAFAFA',
-        border: isSelected ? '1.5px solid #333333' : '1px solid #E5E7EB',
-      }}
-      className="rounded-2xl p-4 text-left flex flex-col gap-3 cursor-pointer hover:shadow-sm transition-shadow"
+      style={{ background: '#FAFAFA' }}
+      className={`
+        relative group rounded-2xl p-4 text-left flex flex-col gap-3 cursor-pointer
+        border-2 transition-all duration-150
+        ${isSelected
+          ? 'border-[#333333] shadow-md'
+          : 'border-[#E5E7EB] hover:border-[#CCCCCC] hover:shadow-sm hover:-translate-y-0.5'
+        }
+      `}
     >
-      <ToolLogo tool={tool} size={56} />
+      <ToolLogo tool={tool} size={56} animated />
       <div>
         <p style={{ color: '#111827' }} className="font-semibold text-sm mb-0.5">
           {tool.name}
@@ -113,6 +120,10 @@ function ToolCard({
           {meta.label}
         </p>
       </div>
+
+      {isSelected && (
+        <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-[#333333] shadow-sm z-10" />
+      )}
     </div>
   )
 }
