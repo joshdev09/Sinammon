@@ -90,10 +90,10 @@ function Hero() {
           Open-Source Tools Platform for Educators.
         </h1>
         <p className="text-[12px] sm:text-[13px] text-[#555] leading-relaxed max-w-[320px] sm:max-w-[440px] lg:max-w-[540px]">
-          Sinammon is an open-source platform that centralizes essential educational tools,
-          including Classroom &amp; Learning Management, Content Creation &amp; Interactive
-          Lessons, Subject-Specific STEM Tools, and Regional &amp; Localized Resources all in
-          one organized, easy-to-access place.
+          Sinammon is an open-source platform for Filipino Educators that centralizes essential 
+          educational tools, including Classroom &amp; Learning Management, Content Creation &amp; 
+          Interactive Lessons, Subject-Specific STEM Tools, and Regional &amp; Localized Resources 
+          all in one organized, easy-to-access place.
         </p>
 
         <button className="mt-5">
