@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { ToolsProvider, useTools } from '../context/ToolsContext'
 import type { Tool } from '../types/tool.types'
+import { NavLink } from 'react-router-dom'
 
 //images
 import iconBackpack from '../assets/images/d1.png'
@@ -94,18 +95,29 @@ function Hero() {
           Lessons, Subject-Specific STEM Tools, and Regional &amp; Localized Resources all in
           one organized, easy-to-access place.
         </p>
+
+        <button className="mt-5">
+          <NavLink 
+            to="/deped-oers"
+            className="py-3 px-5 rounded-full text-[#ffffff] text-sm font-semibold bg-[#FBA455] hover:bg-[#e9944a]">
+              DepEd Common OERs
+            </NavLink>
+        </button>
       </div>
 
       {/* Crayon icons */}
-      <div className="relative z-10 w-[240px] h-[150px] sm:w-[300px] sm:h-[180px] lg:w-[380px] lg:h-[200px] flex-shrink-0 hidden sm:block">
-        <img src={iconStar}    alt="" aria-hidden
-          className="absolute -top-[20px] sm:-top-[25px] lg:-top-[30px] -left-[180px] sm:-left-[240px] lg:-left-[300px] w-[170px] sm:w-[210px] lg:w-[270px] rotate-[-8deg] drop-shadow-sm" />
+      <div className="relative z-10 w-[240px] h-[150px] sm:w-[300px] sm:h-[180px] lg:w-[380px] lg:h-[200px] flex-shrink-0 hidden sm:block md:block">
+        <img src={iconStar} alt="" aria-hidden
+          className="absolute -top-[25px] sm:-top-[30px] lg:-top-[100px] -left-[200px] sm:-left-[270px] lg:-left-[360px] w-[200px] sm:w-[250px] lg:w-[420px] rotate-[-8deg] drop-shadow-sm" />
+        
         <img src={iconBackpack} alt="" aria-hidden
-          className="absolute -top-[25px] sm:-top-[32px] lg:-top-[40px] right-[120px] sm:right-[150px] lg:right-[190px] w-[130px] sm:w-[165px] lg:w-[210px] rotate-[7deg] drop-shadow-sm" />
-        <img src={iconPlane}    alt="" aria-hidden
-          className="absolute -bottom-[20px] sm:-bottom-[25px] lg:-bottom-[30px] -left-[90px] sm:-left-[120px] lg:-left-[150px] w-[120px] sm:w-[155px] lg:w-[200px] rotate-[-25deg] drop-shadow-sm" />
-        <img src={iconClips}    alt="" aria-hidden
-          className="absolute -bottom-[12px] sm:-bottom-[16px] lg:-bottom-[20px] right-[55px] sm:right-[70px] lg:right-[90px] w-[110px] sm:w-[140px] lg:w-[180px] rotate-[6deg] drop-shadow-sm" />
+          className="absolute -top-[30px] sm:-top-[40px] lg:-top-[50px] right-[100px] sm:right-[130px] lg:right-[170px] w-[150px] sm:w-[190px] lg:w-[270px] rotate-[7deg] drop-shadow-sm" />
+        
+        <img src={iconPlane} alt="" aria-hidden
+          className="absolute -bottom-[25px] sm:-bottom-[30px] lg:-bottom-[80px] -left-[90px] sm:-left-[130px] lg:-left-[170px] w-[140px] sm:w-[180px] lg:w-[230px] rotate-[-25deg] drop-shadow-sm" />
+        
+        <img src={iconClips} alt="" aria-hidden
+          className="absolute -bottom-[15px] sm:-bottom-[20px] lg:-bottom-[25px] right-[40px] sm:right-[55px] lg:right-[40px] w-[130px] sm:w-[165px] lg:w-[210px] rotate-[6deg] drop-shadow-sm" />
       </div>
     </section>
   )
