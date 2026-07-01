@@ -1,75 +1,133 @@
-# React + TypeScript + Vite
+# Sinammon 🍂
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Tools educators should have had all along.**
 
-Currently, two official plugins are available:
+Sinammon is an open-source platform that centralizes free digital educational tools for Filipino educators — a directory and toolkit, not another app to learn from scratch. It curates the platforms teachers already need, organizes them by what they actually do in the classroom, and pairs each one with plain-language guidance so adopting new technology doesn't mean starting over.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What is Sinammon?
 
-## React Compiler
+Filipino educators juggle dozens of scattered tools with little guidance on what's free, what's offline-capable, or what actually fits a Philippine classroom. Sinammon solves this by bringing everything into one organized, easy-to-access place across categories like:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Classroom & Learning Management
+- Content Creation & Interactive Lessons
+- Subject-Specific STEM Tools
+- Regional & Localized Resources (e.g. DepEd Common OERs)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🧰 **Tools directory** — searchable, filterable grid of free educational tools, each tagged with tech-skill level and offline capability
+- 📚 **DepEd Common OERs drill-down** — live-scraped view into DepEd's Open Educational Resources
+- 🤖 **AI Tools** — curated AI-powered tools for teaching
+- 📝 **Feedback page** — lets educators submit suggestions and requests (via EmailJS)
+- 🖥️ **macOS-window-style UI** — a distinctive, approachable interface for browsing tools
+- 100% open source and free forever
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) — build tool & dev server
+- [Tailwind CSS v4](https://tailwindcss.com/) — styling
+- [React Router](https://reactrouter.com/) — routing
+- [Lucide React](https://lucide.dev/) — icons
+- [EmailJS](https://www.emailjs.com/) — feedback form submissions
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
 
+### Prerequisites
+
+- Node.js (v18 or later recommended)
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/joshdev09/Sinammon.git
+cd Sinammon
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment Variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Copy `.env.example` to `.env` and fill in your EmailJS credentials (used for the feedback form):
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cp .env.example .env
+```
 
 ```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173` to view the app locally.
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── assets/           # Images and static assets
+├── components/       # Page-level and shared components
+│   ├── About.tsx
+│   ├── AiTools.tsx
+│   ├── DepEdOERsPage.tsx
+│   ├── Footer.tsx
+│   ├── LandingPage.tsx
+│   └── NavBar.tsx
+├── context/          # React context providers
+│   └── ToolsContext.tsx
+├── data/             # Static/curated data sources
+│   ├── aiTools.data.ts
+│   ├── deped.data.ts
+│   └── tools.data.ts
+├── pages/            # Standalone route pages
+│   └── FeedbackPage.tsx
+├── types/            # TypeScript type definitions
+├── App.tsx           # Routes
+└── main.tsx          # App entry point
+```
+
+## Routes
+
+| Path          | Page                            |
+|---------------|----------------------------------|
+| `/`           | Landing page / tools directory   |
+| `/about`      | About Sinammon                   |
+| `/deped-oers` | DepEd Common OERs drill-down     |
+| `/ai-tools`   | AI Tools directory               |
+| `/feedback`   | Feedback form                    |
+
+## Contributing
+
+Sinammon is open source and welcomes contributions — whether that's adding new tools to the directory, improving accessibility, or fixing bugs. Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is open source and free to use.
