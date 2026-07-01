@@ -251,7 +251,7 @@ export default function FeedbackPage() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={5}
-              placeholder="Tell us more — steps to reproduce a bug, or details about your idea..."
+              placeholder="Tell us more — report a bug, or details about your idea..."
               className="w-full bg-[#f9f9f9] border border-[#e5e5e5] rounded-xl px-3.5 py-2.5 text-[13px] text-[#333] placeholder-[#bbb] outline-none focus:border-[#FBA455] transition-colors resize-none"
             />
           </div>
